@@ -1,0 +1,6 @@
+rootProject.name = 'devices'
+
+include 'mainApp'
+include 'domain'
+include 'application'
+include 'infrastructure'
