@@ -6,11 +6,11 @@ import com.bologna.devices.entities.enums.State;
 import java.util.List;
 
 public interface DeviceRepository {
-    Device create(Device device);
-    Device update(Device device);
+    Device save(Device device);
     Device findById(Long id);
+    Device findByNameAndBrand(String name, String brand);
     List<Device> findAll();
     List<Device> findByBrand(String brand);
     List<Device> findByState(State state);
-    void delete();
+    void delete(Long id);
 }
