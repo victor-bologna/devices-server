@@ -1,0 +1,15 @@
+{
+	"id": "52714fed-4cb0-465d-88b2-44d34cfc9b88",
+	"values": [
+		{
+			"key": "host",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2026-01-11T22:19:00.964Z",
+	"_postman_exported_using": "Postman/11.79.5"
+}

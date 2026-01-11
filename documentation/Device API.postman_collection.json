@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "8422379c-387c-4962-bc5e-4c192a059a15",
+		"name": "Localhost apps",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "51410527",
+		"_collection_link": "https://victor-bologna-7768369.postman.co/workspace/Victor-Bologna's-Workspace~8238493a-6007-40f4-8300-42024051c5af/collection/51410527-8422379c-387c-4962-bc5e-4c192a059a15?action=share&source=collection_link&creator=51410527"
+	},
+	"item": [
+		{
+			"name": "Devices APP",
+			"item": [
+				{
+					"name": "Create new device",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Galaxy S24\",\r\n    \"brand\": \"Samsung\",\r\n    \"state\": \"AVAILABLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/devices",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update device",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Galaxy 23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/devices/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"devices",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find device By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/v1/devices/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"devices",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find all devices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/v1/devices",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"devices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find devices by Brand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/v1/devices/brand?brand=samsung",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"devices",
+								"brand"
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "samsung"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find devices by State",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/v1/devices/state?state=AVAILABLE",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"devices",
+								"state"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "AVAILABLE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete device",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/v1/devices/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"devices",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

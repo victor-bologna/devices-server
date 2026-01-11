@@ -11,7 +11,8 @@ Microservice API responsible for managing existent devices in database using RES
 
 ## Architecture:
 This project is made by 4 separated modules following [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) 
-principles to keep the all cores that maintain a fully working project isolated, independent and testable:
+principles to keep the all cores that maintain a fully working project isolated, independent and testable.<br>
+All the documentation, including [Postman](https://www.postman.com/) library are included in documentation folder.
 
 ![UML Diagram.drawio.png](documentation/UML%20Diagram.drawio.png)
 
