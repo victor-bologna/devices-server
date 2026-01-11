@@ -61,7 +61,7 @@ class UpdateDeviceUseCaseTest {
 
         DeviceException ex = assertThrows(DeviceException.class, () -> useCase.execute(input));
 
-        assertEquals(404, ex.getHttpCode());
+        assertEquals(204, ex.getHttpCode());
         assertEquals("Device with id 99 does not exists", ex.getMessage());
 
         verify(deviceRepository).findById(99L);

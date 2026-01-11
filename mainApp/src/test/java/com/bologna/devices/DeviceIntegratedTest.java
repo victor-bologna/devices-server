@@ -39,7 +39,7 @@ class DeviceIntegratedTest {
         String body1 = mockMvc.perform(post("/v1/devices")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(req1)))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id").isNumber())
                 .andExpect(jsonPath("$.name").value("GALAXY"))
                 .andExpect(jsonPath("$.brand").value("SAMSUNG"))
@@ -56,7 +56,7 @@ class DeviceIntegratedTest {
         mockMvc.perform(post("/v1/devices")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(req2)))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id").isNumber())
                 .andExpect(jsonPath("$.state").value("IN_USE"))
                 .andReturn()
@@ -67,11 +67,11 @@ class DeviceIntegratedTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(greaterThanOrEqualTo(2))));
 
-        mockMvc.perform(get("/v1/devices/brand").header("brand", "SAMSUNG"))
+        mockMvc.perform(get("/v1/devices/brand").param("brand", "SAMSUNG"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].brand").value("SAMSUNG"));
 
-        mockMvc.perform(get("/v1/devices/state").header("state", "AVAILABLE"))
+        mockMvc.perform(get("/v1/devices/state").param("state", "AVAILABLE"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].state").value("AVAILABLE"));
 
@@ -101,10 +101,10 @@ class DeviceIntegratedTest {
         mockMvc.perform(get("/v1/devices/{id}", deviceResponse1.id()))
                 .andExpect(status().isNotFound());
 
-        mockMvc.perform(get("/v1/devices/brand").header("brand", "Unknown"))
+        mockMvc.perform(get("/v1/devices/brand").param("brand", "Unknown"))
                 .andExpect(status().isNoContent());
 
-        mockMvc.perform(get("/v1/devices/state").header("state", "AVAILABLE"))
+        mockMvc.perform(get("/v1/devices/state").param("state", "AVAILABLE"))
                 .andExpect(status().isNoContent());
     }
 }
