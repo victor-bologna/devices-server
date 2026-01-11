@@ -14,4 +14,10 @@ public record Device(
     public boolean checkIfDeviceInUse() {
         return state == State.IN_USE;
     }
+    public boolean checkIfNameChanged(String name) {
+        return name != null && !name.equalsIgnoreCase(this.name);
+    }
+    public boolean checkIfBrandChanged(String brand) {
+        return brand != null && !brand.equalsIgnoreCase(this.brand);
+    }
 }
